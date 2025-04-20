@@ -1,29 +1,27 @@
 name: Docker Build & Push
 
-#this trigger workflow
-
+# this triggers the workflow
 on:
   push:
     branches:
       - master
 
-#this will exicute on vm or server of ubuntu
+# this will execute on a VM or server with Ubuntu
 jobs:
   build:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-#this are the job steps
-
+    # these are the job steps
     steps:
-     - name: checkout code
-       uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-     - name: set up Docker
-       uses: docker/setup-buildx-action@v3
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
 
+      - name: Build Docker Image
+        run: docker build -t github-actions-flask .
 
-     - name: Build Docker Image
-       run: docker build -t github-action-flask .
+      - name: Run Container
+        run: docker run -d -p 5000:5000 github-actions-flask
 
-     - name: Run Container
-       run: docker run -d -p 5000:5000 github-actions-flask   
