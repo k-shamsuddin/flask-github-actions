@@ -54,6 +54,3 @@ Hello! this is GitHub Action + Docker, by Shams! <3.❤️
 🔗 [LinkedIn](https://www.linkedin.com/in/khaja-shamsuddin-ahmed)  
 💻 [GitHub](https://github.com/k-shamsuddin)
 
----
-
-⭐ *If you liked this project, give it a star and follow my DevOps journey!*
